@@ -1,0 +1,15 @@
+# import Post from "./generated/prisma.graphql"
+
+type Query {
+  feed: [Post!]!
+  songs:[Song!]!
+  drafts: [Post!]!
+  post(id: ID!): Post
+}
+
+type Mutation {
+  createDraft(title: String!, text: String): Post
+  createSong (title: String!, genre: String!,artist: String!, releaseYear: Int): Song
+  deletePost(id: ID!): Post
+  publish(id: ID!): Post
+}
